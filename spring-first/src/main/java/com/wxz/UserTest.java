@@ -11,6 +11,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class UserTest
 {
+    /**
+     * 测试 Spring 对象创建
+     *
+     * @author wxz
+     * @date 16:18 2024/1/10
+     */
     @Test
     public void testUserObject()
     {
@@ -23,5 +29,22 @@ public class UserTest
 
         // 测试对象方法
         user.add();
+    }
+
+    /**
+     * 反射创建对象
+     *
+     * @author wxz
+     * @date 16:19 2024/1/10
+     */
+    @Test
+    public void testUserObject1() throws Exception
+    {
+        // 获取类 Class 创建
+        Class<?> clazz = Class.forName("com.wxz.User");
+        // 调用方法创建对象
+        User user = (User) clazz.getDeclaredConstructor().newInstance();
+
+        System.out.println(user);
     }
 }
