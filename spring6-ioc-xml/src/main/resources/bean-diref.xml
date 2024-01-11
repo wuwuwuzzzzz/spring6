@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--  学生对象  -->
+    <bean id="student" class="com.wxz.dimap.Student">
+        <property name="sid" value="1" />
+        <property name="name" value="WXZ" />
+        <!--  注入 list、map 类型属性  -->
+        <property name="lessonList" ref="lessonList" />
+        <property name="teacherMap" ref="teacherMap" />
+    </bean>
+
+    <!--  list 集合类型的 bean  -->
+    <util:list id="lessonList">
+        <ref bean="lesson" />
+    </util:list>
+
+    <!--  map 集合类型的 bean  -->
+    <util:map id="teacherMap">
+        <entry key="10010" value-ref="teacherOne"/>
+        <entry key="10086" value-ref="teacherTwo"/>
+    </util:map>
+
+    <!--  课程对象  -->
+    <bean id="lesson" class="com.wxz.dimap.Lesson">
+        <property name="lessonName" value="JAVA开发" />
+    </bean>
+
+    <!--  老师对象  -->
+    <bean id="teacherOne" class="com.wxz.dimap.Teacher">
+        <property name="tid" value="1" />
+        <property name="name" value="WXZ的老师" />
+    </bean>
+
+    <!--  老师对象  -->
+    <bean id="teacherTwo" class="com.wxz.dimap.Teacher">
+        <property name="tid" value="1" />
+        <property name="name" value="WXZ的老师2" />
+    </bean>
+
+</beans>
