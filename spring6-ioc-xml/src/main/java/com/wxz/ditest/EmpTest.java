@@ -56,4 +56,16 @@ public class EmpTest
         Emp emp = context.getBean("emp", Emp.class);
         System.out.println(emp);
     }
+
+    /**
+     * @author wxz
+     * @date 15:08 2024/1/11
+     */
+    @Test
+    public void testEmp5()
+    {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean-dilist.xml");
+        Dept dept = context.getBean("dept", Dept.class);
+        dept.info();
+    }
 }
