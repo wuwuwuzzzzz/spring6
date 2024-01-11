@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  部门对象  -->
+    <bean id="dept" class="com.wxz.ditest.Dept">
+        <property name="deptName" value="保安部门" />
+    </bean>
+
+    <!--  员工对象  -->
+    <bean id="emp" class="com.wxz.ditest.Emp">
+        <!--  普通属性注入  -->
+        <property name="empName" value="WXZ" />
+        <property name="age" value="18" />
+        <!--  对象属性注入  -->
+        <property name="dept" ref="dept" />
+    </bean>
+
+    <!--  内部 bean 注入  -->
+    <bean id="emp2" class="com.wxz.ditest.Emp">
+        <!--  普通属性注入  -->
+        <property name="empName" value="WXZ" />
+        <property name="age" value="18" />
+        <!--  对象属性注入  -->
+        <property name="dept">
+            <bean class="com.wxz.ditest.Dept">
+                <property name="deptName" value="财务部" />
+            </bean>
+        </property>
+    </bean>
+
+    <!--  级联赋值  -->
+    <bean id="emp3" class="com.wxz.ditest.Emp">
+        <!--  普通属性注入  -->
+        <property name="empName" value="WXZ" />
+        <property name="age" value="18" />
+        <property name="dept" ref="dept" />
+        <!--  对象属性注入  -->
+        <property name="dept.deptName" value="测试部" />
+    </bean>
+
+</beans>
