@@ -31,6 +31,11 @@ public class Emp
     private Integer age;
 
     /**
+     * 爱好
+     */
+    private String[] loves;
+
+    /**
      * @author wxz
      * @date 14:34 2024/1/11
      */
