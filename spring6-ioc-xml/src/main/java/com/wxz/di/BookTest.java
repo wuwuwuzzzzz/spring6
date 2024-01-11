@@ -20,4 +20,16 @@ public class BookTest
         Book book = context.getBean("book", Book.class);
         System.out.println(book);
     }
+
+    /**
+     * @author wxz
+     * @date 12:10 2024/1/11
+     */
+    @Test
+    public void testCon()
+    {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean-di.xml");
+        Book book = context.getBean("bookCon", Book.class);
+        System.out.println(book);
+    }
 }

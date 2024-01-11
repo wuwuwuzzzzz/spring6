@@ -9,4 +9,10 @@
         <property name="author" value="WXZ" />
     </bean>
 
+    <!--  构造器注入  -->
+    <bean id="bookCon" class="com.wxz.di.Book">
+        <constructor-arg name="bookName" value="后端开发" />
+        <constructor-arg name="author" value="WXZ" />
+    </bean>
+
 </beans>
