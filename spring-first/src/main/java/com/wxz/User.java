@@ -6,7 +6,6 @@ package com.wxz;
  */
 public class User
 {
-
     /**
      * @author wxz
      * @date 16:14 2024/1/10
