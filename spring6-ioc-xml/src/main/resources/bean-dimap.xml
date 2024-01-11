@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--  学生对象  -->
+    <bean id="student" class="com.wxz.dimap.Student">
+        <property name="sid" value="1" />
+        <property name="name" value="WXZ" />
+        <!--  map 集合类型属性  -->
+        <property name="teacherMap">
+            <map>
+                <entry value-ref="teacherOne" key="10010"/>
+                <entry value-ref="teacherTwo" key="10011"/>
+            </map>
+        </property>
+
+    </bean>
+
+    <!--  老师对象  -->
+    <bean id="teacherOne" class="com.wxz.dimap.Teacher">
+        <property name="tid" value="1" />
+        <property name="name" value="WXZ的老师" />
+    </bean>
+
+    <!--  老师对象  -->
+    <bean id="teacherTwo" class="com.wxz.dimap.Teacher">
+        <property name="tid" value="1" />
+        <property name="name" value="WXZ的老师2" />
+    </bean>
+
+</beans>
