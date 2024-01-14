@@ -1,9 +1,10 @@
-package com.wxz.annoaop;
+package com.wxz.xmlaop;
 
 import lombok.extern.java.Log;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.*;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -24,7 +25,6 @@ public class LogAspect
      * @author wxz
      * @date 14:18 2024/1/14
      */
-    @Before("pointCut()")
     public void beforeMethod(JoinPoint joinPoint)
     {
         String name = joinPoint.getSignature().getName();
@@ -39,7 +39,6 @@ public class LogAspect
      * @author wxz
      * @date 14:18 2024/1/14
      */
-    @After("pointCut()")
     public void afterMethod(JoinPoint joinPoint)
     {
         String name = joinPoint.getSignature().getName();
@@ -55,7 +54,6 @@ public class LogAspect
      * @author wxz
      * @date 14:18 2024/1/14
      */
-    @AfterReturning(value = "pointCut()", returning = "result")
     public void afterReturningMethod(JoinPoint joinPoint, Object result)
     {
         String name = joinPoint.getSignature().getName();
@@ -71,7 +69,6 @@ public class LogAspect
      * @author wxz
      * @date 14:21 2024/1/14
      */
-    @AfterThrowing(value = "pointCut()", throwing = "e")
     public void afterThrowingMethod(JoinPoint joinPoint, Throwable e)
     {
         String name = joinPoint.getSignature().getName();
@@ -87,7 +84,6 @@ public class LogAspect
      * @author wxz
      * @date 14:31 2024/1/14
      */
-    @Around("pointCut()")
     public Object aroundMethod(ProceedingJoinPoint joinPoint)
     {
         Object result = null;
@@ -105,16 +101,5 @@ public class LogAspect
             System.out.println("环绕通知 --> 目标对象方法执行完毕");
         }
         return result;
-    }
-
-    /**
-     * 重用切入点表达式
-     *
-     * @author wxz
-     * @date 14:31 2024/1/14
-     */
-    @Pointcut("execution(public int com.wxz.annoaop.CalculatorImpl.*(..))")
-    public void pointCut()
-    {
     }
 }
