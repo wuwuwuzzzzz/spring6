@@ -13,6 +13,7 @@
         <module>spring6-ioc-xml</module>
         <module>srping-ioc-annotation</module>
         <module>guigu-spring</module>
+        <module>spring-aop</module>
     </modules>
 
     <properties>
