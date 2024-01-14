@@ -1,9 +1,12 @@
-package com.wxz;
+package com.wxz.annoaop;
+
+import org.springframework.stereotype.Component;
 
 /**
  * @author wxz
  * @date 11:48 2024/1/14
  */
+@Component
 public class CalculatorImpl implements Calculator
 {
     /**

@@ -1,4 +1,4 @@
-package com.wxz;
+package com.wxz.annoaop;
 
 /**
  * @author wxz

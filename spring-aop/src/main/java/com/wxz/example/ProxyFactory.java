@@ -1,4 +1,4 @@
-package com.wxz;
+package com.wxz.example;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;

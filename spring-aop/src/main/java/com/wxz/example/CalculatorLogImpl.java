@@ -1,4 +1,4 @@
-package com.wxz;
+package com.wxz.example;
 
 /**
  * @author wxz
