@@ -1,4 +1,4 @@
-package com.wxz.jdbc;
+package com.wxz.spring6.jdbc;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

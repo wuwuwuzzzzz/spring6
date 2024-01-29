@@ -1,4 +1,4 @@
-package com.wxz.jdbc;
+package com.wxz.spring6.jdbc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,7 +85,7 @@ public class JdbcTemplateTest
 
     /**
      * @author wxz
-     * @date 15:51 2024/1/14`
+     * @date 15:51 2024/1/14
      */
     @Test
     public void testSelectCount()
